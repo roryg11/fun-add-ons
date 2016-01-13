@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Goals Index page AKA PASSION PLAN!!!!</h1>
+      <%= @goals.each do |goal|%>
+        <div>
+          <p><%= goal.name%></p>
+          <p><%= goal.description%></p>
+          <p><%= goal.due_date%></p>
+          <p><%= goal.completed%></p>
+        </div>
+      <% end %>
+    <%= link_to "Record New Goal", new_goal_path, class: "button", id: "new-goal-action" %>
+  </body>
+</html>

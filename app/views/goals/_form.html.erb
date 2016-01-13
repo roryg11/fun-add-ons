@@ -1,0 +1,18 @@
+<h1>form!</h1>
+
+<%=form_for(@goal, html: {class: "form-horizontal"}) do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :due_date %>
+  <%= f.date_field :due_date %>
+
+  <%= f.label "Completed?" %>
+  <%= f.check_box :completed %>
+
+  <%= f.submit "Submit Post", id: "submit-post-action" %>
+<% end %>
