@@ -6,14 +6,15 @@
   </head>
   <body>
     <h1>Goals Index page AKA PASSION PLAN!!!!</h1>
-      <%= @goals.each do |goal|%>
-        <div>
-          <p><%= goal.name%></p>
-          <p><%= goal.description%></p>
-          <p><%= goal.due_date%></p>
-          <p><%= goal.completed%></p>
-        </div>
+    <div>
+      <% @goals.each do |goal|%>
+      <p><%= goal.name%></p>
+      <p><%= goal.description%></p>
+      <p><%= goal.due_date%></p>
+      <p><%= goal.completed%></p>
+      <p><%= link_to "Edit #{goal.name}", goal_path(goal), id:"update-goal-action" %><%= link_to "Delete #{goal.name}", goal_path(goal), method: :delete, id:"delete-goal-action" %></p>
       <% end %>
+    </div>
     <%= link_to "Record New Goal", new_goal_path, class: "button", id: "new-goal-action" %>
   </body>
 </html>

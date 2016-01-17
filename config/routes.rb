@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'goals#index'
 
-  resources :goals 
+  resources :goals do
+    resources :todos
+  end
   # Example of regular route:
   # get 'goals/:id' => 'catalog#view'
 
