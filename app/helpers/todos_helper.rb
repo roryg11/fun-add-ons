@@ -1,2 +1,2 @@
-module TodosControllerHelper
+module TodosHelper
 end

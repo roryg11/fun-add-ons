@@ -2,4 +2,12 @@
 
 <%= render 'form' %>
 
+<% @goal.todos.each do |todo| %>
+  <p><%=  todo.title %></p>
+  <p><%=  todo.description %></p>
+  <p><%=  todo.completed %></p>
+  <%= link_to "edit this todo", edit_goal_todo_path(@goal, todo) %>
+  <%= link_to "delete this todo", goal_todo_path(@goal, todo), method: :delete %>
+<% end %>
+
 <%= link_to "Create To Dos For This Goal", new_goal_todo_path(@goal)%>

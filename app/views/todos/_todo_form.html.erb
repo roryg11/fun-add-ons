@@ -1,12 +1,9 @@
-<%= form_for [@goal, @todo] html: {class: "form-horizontal"} do |f| %>
-  <%= f.label :name %>
-  <%= f.string :name %>
+<%= form_for([@goal, @todo], html: {class: "form-horizontal"}) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_area :title %>
 
   <%=f.label :description %>
-  <%=f.string :description %>
-
-  <%=f.label :due_date %>
-  <%=f.date_area :due_date %>
+  <%=f.text_area :description %>
 
   <%= f.submit %>
 <% end %>
